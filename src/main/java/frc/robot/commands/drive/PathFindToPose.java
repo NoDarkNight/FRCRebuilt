@@ -12,7 +12,7 @@ import com.pathplanner.lib.path.PathConstraints;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import frc.robot.Constants;
-import frc.robot.commands.Lights.BlinkLights;
+// import frc.robot.commands.Lights.BlinkLights;
 import frc.robot.subsystems.Drive;
 import frc.robot.testingdashboard.Command;
 import frc.robot.testingdashboard.TDNumber;
@@ -28,7 +28,7 @@ public class PathFindToPose extends Command {
   TDNumber TDCurrentTargetY;
   TDNumber TDCurrentTargetAngle;
 
-  BlinkLights m_blinkLights;
+  // BlinkLights m_blinkLights;
 
   /** Creates a new TargetDrive. */
   public PathFindToPose(Supplier<TargetPose> targetSupplier) {
@@ -37,7 +37,7 @@ public class PathFindToPose extends Command {
     m_targetSupplier = targetSupplier;
     addRequirements(m_drive);
 
-    m_blinkLights = new BlinkLights(Constants.Color.red);
+//     m_blinkLights = new BlinkLights(Constants.Color.red);
   }
 
   // Called when the command is initially scheduled.
@@ -51,7 +51,7 @@ public class PathFindToPose extends Command {
     TDCurrentTargetY.set(m_currentTarget.getPose().getY());
     TDCurrentTargetAngle = new TDNumber(m_drive, "Test Outputs", "Current Target Angle");
     TDCurrentTargetAngle.set(m_currentTarget.getPose().getRotation().getDegrees());
-    m_blinkLights.schedule();
+//    m_blink.schedule();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -76,7 +76,7 @@ public class PathFindToPose extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_blinkLights.cancel();
+//    m_blinkLights.cancel();
     
     if (m_currentPathCommand != null) {
       m_currentPathCommand.end(interrupted);

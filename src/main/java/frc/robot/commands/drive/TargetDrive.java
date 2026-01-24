@@ -42,7 +42,7 @@ public class TargetDrive extends Command {
     m_driveInputs = driveInputs;
     m_tgtSupplier = targetSupplier;
 
-    m_thetaController = new PIDController(5, 0, Constants.AutoConstants.kDThetaController);//Should be separated from Auto ThetaController and may need retuning
+   //  m_thetaController = new PIDController(5, 0, Constants.AutoConstants.kDThetaController);//Should be separated from Auto ThetaController and may need retuning
     m_thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
     m_thetaController.setTolerance(0.1);
@@ -88,14 +88,14 @@ public class TargetDrive extends Command {
     TDRotationFeedForward.set(ff);
     rotation += ff;
 
-    double xSpeed =  -MathUtil.applyDeadband(m_driveInputs.getX(), Constants.OIConstants.kDriveDeadband) * Constants.kMaxSpeedMetersPerSecond;
-    double ySpeed =  -MathUtil.applyDeadband(m_driveInputs.getY(), Constants.OIConstants.kDriveDeadband) * Constants.kMaxSpeedMetersPerSecond;
+   // double xSpeed =  -MathUtil.applyDeadband(m_driveInputs.getX(), Constants.OIConstants.kDriveDeadband) * Constants.kMaxSpeedMetersPerSecond;
+   // double ySpeed =  -MathUtil.applyDeadband(m_driveInputs.getY(), Constants.OIConstants.kDriveDeadband) * Constants.kMaxSpeedMetersPerSecond;
     Rotation2d fieldRotationOffset = currentPose.getRotation().plus(FieldUtils.getInstance().getRotationOffset());
 
-    ChassisSpeeds outputSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(xSpeed, ySpeed, rotation, fieldRotationOffset);
-    m_drive.drive(outputSpeeds);
+    // ChassisSpeeds outputSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(xSpeed, ySpeed, rotation, fieldRotationOffset);
+    //m_drive.drive(outputSpeeds);
 
-    atGoal = MathUtil.isNear(currentPose.getRotation().getDegrees(), targetPose.getRotation().getDegrees(), Constants.D_ANGLE_TOLERANCE_DEGREES);
+   // atGoal = MathUtil.isNear(currentPose.getRotation().getDegrees(), targetPose.getRotation().getDegrees(), Constants.D_ANGLE_TOLERANCE_DEGREES);
   }
 
   // Called once the command ends or is interrupted.

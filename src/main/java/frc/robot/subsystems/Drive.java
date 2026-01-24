@@ -172,10 +172,10 @@ public class Drive extends SubsystemBase {
     m_TLeftBackCurrentOutput = new TDNumber(this, "Current", "Steering Back Left Output");
     m_TRightBackCurrentOutput = new TDNumber(this, "Current", "Steering Back Right Output");  
   
-    m_TRightFrontSetpoint = new TDNumber(this, "Current", "Steering Front Right Setpoint");
-    m_TLeftFrontSetpoint  = new TDNumber(this, "Current", "Steering Front Left Setpoint");
-    m_TRightBackSetpoint  = new TDNumber(this, "Current", "Steering Back Right Setpoint");
-    m_TLeftBackSetpoint   = new TDNumber(this, "Current", "Steering Back Left Setpoint");
+    m_TRightFrontSetpoint = new TDNumber(this, "Current", "Speed Front Right Setpoint");
+    m_TLeftFrontSetpoint  = new TDNumber(this, "Current", "Speed Front Left Setpoint");
+    m_TRightBackSetpoint  = new TDNumber(this, "Current", "Speed Back Right Setpoint");
+    m_TLeftBackSetpoint   = new TDNumber(this, "Current", "Speed Back Left Setpoint");
     DCMotor neovortex = DCMotor.getNeoVortex(1).withReduction(SwerveModuleConstants.kDrivingMotorReduction);
     
     ModuleConfig swerveModuleConfig = new ModuleConfig(SwerveModuleConstants.kWheelDiameterMeters/2, DriveConstants.kMaxSpeedMetersPerSecond, 
