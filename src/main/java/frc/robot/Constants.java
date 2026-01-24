@@ -1,5 +1,7 @@
 package frc.robot;
 
+import java.io.FilenameFilter;
+
 import com.pathplanner.lib.config.PIDConstants;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 
@@ -127,6 +129,10 @@ public final class Constants {
 
         public static final VisionConfig[] kLeafletVisionSystems = null;
         public static final VisionConfig[] kRebuiltVisionSystems = null;
+    }
+
+    public static class ShooterConstants {
+        public static final double kVelocityFactor = 1;
     }
 
     public static final class OIConstants {
