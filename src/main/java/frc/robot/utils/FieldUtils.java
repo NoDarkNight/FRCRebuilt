@@ -93,4 +93,10 @@ public class FieldUtils{
     public boolean inAllianceHalf(Pose2d robotPose, Alliance alliance) {
         return (alliance == Alliance.Blue) ^ (robotPose.getX() > FieldLocationConstants.kMidfieldX);
     }
+
+    public boolean inAllianceZone(Pose2d robotPose, Alliance alliance) {
+        boolean red = (alliance == Alliance.Red) && (robotPose.getX() < FieldLocationConstants.kRedAllianceZoneX);
+        boolean blue = (alliance == Alliance.Blue) && (robotPose.getX() > FieldLocationConstants.kBlueAllianceZoneX);
+        return red || blue;
+    }
 }

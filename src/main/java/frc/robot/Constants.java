@@ -113,8 +113,10 @@ public final class Constants {
     }
 
     public static final class FieldLocationConstants {
-        // TODO: get actual midfield position
-        public static final double kMidfieldX = 0;
+        // calculated from values in glass
+        public static final double kMidfieldX = Units.feetToMeters(27.13);
+        public static final double kRedAllianceZoneX = Units.feetToMeters(39.0);
+        public static final double kBlueAllianceZoneX = Units.feetToMeters(15.26);
     }
 
     public static final class VisionConstants {
